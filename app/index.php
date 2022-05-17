@@ -24,6 +24,9 @@ $dotenv->safeLoad();
 // Instantiate App
 $app = AppFactory::create();
 
+// Set base path
+$app->setBasePath('/app');
+
 // Add error middleware
 $app->addErrorMiddleware(true, true, true);
 
