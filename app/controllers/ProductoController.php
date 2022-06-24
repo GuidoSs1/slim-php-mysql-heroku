@@ -1,12 +1,12 @@
 <?php
-//require_once './interfaces/IApiUsable.php';
+require_once './interfaces/IApiUsable.php';
 require_once './models/Area.php';
 require_once './models/Producto.php';
 require_once './models/Pedido.php';
 
-class ProductoController extends Producto {
+class ProductoController extends Producto implements IApiUsable{
 
-  public function TraerUno($request, $handler){
+  public function TraerUno($request, $handler, $args){
     $params = $request->getParsedBody();
     $id = $params['id'];
     $Producto = Producto::getProductoById($id);
@@ -26,7 +26,7 @@ class ProductoController extends Producto {
       ->withHeader('Content-Type', 'application/json');
   }
   
-  public function CargarUno($request, $handler, $args){
+  public function CargarUno($request, $handler){
     $params = $request->getParsedBody();
     $area = $params['area'];
     $pedido_id = $params['pedido_asoc'];
@@ -48,11 +48,6 @@ class ProductoController extends Producto {
       $pedido = Pedido::getPedidoById($pedido_id);
       $pedido_cost = Producto::getSumOfProductosByPedido($pedido->__get("id"));
       $pedido->__set("cost_pedido",$pedido_cost);
-      
-      /*if(Pedido::updatePedido($pedido) > 0){
-          echo 'El precio total del pro<br>';
-          $pedido->printSingleEntityAsMesa();
-      }*/
 
       $payload = json_encode(array("mensaje" => "Producto creado con exito"));
       $handler->getBody()->write("Producto creado con exito");
@@ -83,9 +78,9 @@ class ProductoController extends Producto {
             ->withHeader('Content-Type', 'application/json');
     }
 
-    public function ModificarUno($request, $handler, $args){
+    public function ModificarUno($request, $handler){
 
-        $this->TraerTodos($request, $handler, $args);
+        $this->TraerTodos($request, $handler);
         
         $params = $request->getParsedBody();
         

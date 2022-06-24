@@ -4,7 +4,7 @@ require_once './models/Usuario.php';
 require_once './interfaces/IApiUsable.php';
 require_once './middlewares/AuthJWT.php';
 
-class UsuarioController extends Usuario{
+class UsuarioController extends Usuario implements IApiUsable{
 
   public function CargarUno($request, $handler){
 

@@ -9,15 +9,15 @@ class EncuestaController{
     $payload = json_encode(array("message" => "Algo salio mal"));
     if (isset($params['mesa_punt']) && isset($params['cocinero_punt'])
     && isset($params['mozo_punt']) && isset($params['resto_punt'])
-    && isset($params['pedido_id']) && isset($params['comments'])) {
+    && isset($params['pedido_id']) && isset($params['comentario'])) {
       $pedido_id = $params['pedido_id'];
       $mesa_punt = $params['mesa_punt'];
       $resto_punt = $params['resto_punt'];
       $mozo_punt = $params['mozo_punt'];
       $cocinero_punt = $params['cocinero_punt'];
-      $comments = $params['comments'];
+      $comentario = $params['comentario'];
 
-      $Encuesta = Encuesta::createEncuesta($pedido_id, $mesa_punt, $resto_punt, $mozo_punt, $cocinero_punt, $comments);
+      $Encuesta = Encuesta::createEncuesta($pedido_id, $mesa_punt, $resto_punt, $mozo_punt, $cocinero_punt, $comentario);
 
       if(Encuesta::insertEncuesta($Encuesta) > 0){
         $payload = json_encode(array("Encuesta" => $Encuesta, "message" => "Encuesta creada con exito"));

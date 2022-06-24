@@ -1,6 +1,6 @@
 <?php
 
-//use Fpdf\Fpdf;
+require_once './fpdf.php';
 
 class Encuesta {
   public $id;
@@ -48,40 +48,25 @@ class Encuesta {
     $this->promedio_punt = $promedio; 
   }
 
-  /*public static function DownloadPdf($directory, $amountEncuestas){
-    $Encuestas = self::getBestEncuestas($amountEncuestas);
+  public static function DownloadPdf($directory, $amountEncuestas){
+    $Encuestas = self::mejoresEncuestas($amountEncuestas);
     if ($Encuestas) {
       if(!file_exists($directory)){
         mkdir($directory, 0777, true);
       }
 
-
       $pdf = new FPDF();
       $pdf->AddPage();
 
-      // Letter type size
       $pdf->SetFont('Arial', 'B', 25);
 
-      // Main title of the pdf
       $pdf->Cell(160, 15, 'Comanda', 1, 3, 'L');
       $pdf->Ln(3);
 
       $pdf->SetFont('Arial', '', 15);
 
-      // Secondary title of the pdf
-      $pdf->Cell(60, 4, 'TP Final Programacion III', 0, 1, 'L');
-      $pdf->Cell(60, 0, '', 'T');
-      $pdf->Ln(3);
+      $header = array('ID', 'PEDIDO', 'M_PUNT', 'R_PUNT', 'MZ_PUNT', 'C_PUNT', 'PROMEDIO', 'COMENTARIO');
       
-      // Title of the table
-      $pdf->Cell(60, 4, 'Facundo Falcone', 0, 1, 'L');
-      $pdf->Cell(40, 0, '', 'T');
-      $pdf->Ln(5);
-
-      // Columns of Encuesta Class
-      $header = array('ID', 'ORDER', 'T_SCORE', 'R_SCORE', 'W_SCORE', 'C_SCORE', 'promedio', 'comentario');
-      
-      // RGB colors of the table
       $pdf->SetFillColor(125, 0, 0);
       $pdf->SetTextColor(125);
       $pdf->SetDrawColor(50, 0, 0);
@@ -94,20 +79,19 @@ class Encuesta {
       }
       $pdf->Ln();
 
-      // Set the color of the text
       $pdf->SetFillColor(215, 209, 235);
       $pdf->SetTextColor(0);
       $pdf->SetFont('');
-      // Data
+
       $fill = false;
 
       foreach ($Encuestas as $Encuesta) {
-        $pdf->Cell($w[0], 6, $Encuesta->getId(), 'LR', 0, 'C', $fill);
+        $pdf->Cell($w[0], 6, $Encuesta->__get("id"), 'LR', 0, 'C', $fill);
         $pdf->Cell($w[1], 6, $Encuesta->__get("pedido_id"), 'LR', 0, 'C', $fill);
         $pdf->Cell($w[2], 6, $Encuesta->__get("mesa_punt"), 'LR', 0, 'C', $fill);
         $pdf->Cell($w[3], 6, $Encuesta->__get("resto_punt"), 'LR', 0, 'C', $fill);
         $pdf->Cell($w[4], 6, $Encuesta->__get("mozo_punt"), 'LR', 0, 'C', $fill);
-        $pdf->Cell($w[5], 6, $Encuesta->getCheffScore(), 'LR', 0, 'C', $fill);
+        $pdf->Cell($w[5], 6, $Encuesta->__get("cocinero_punt"), 'LR', 0, 'C', $fill);
         $pdf->Cell($w[6], 6, $Encuesta->__get("promedio_punt"), 'LR', 0, 'C', $fill);
         $pdf->Cell($w[7], 6, $Encuesta->__get("comentario"), 'LR', 0, 'C', $fill);
         $pdf->Ln();
@@ -125,7 +109,7 @@ class Encuesta {
     }
     
     return $payload;
-  }*/
+  }
 
   public static function insertEncuesta($Encuesta){
     $objAccesoDatos = AccesoDatos::obtenerInstancia();

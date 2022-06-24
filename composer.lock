@@ -447,7 +447,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v9.16.0",
+            "version": "v9.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -502,7 +502,7 @@
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v9.16.0",
+            "version": "v9.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/conditionable.git",
@@ -548,7 +548,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v9.16.0",
+            "version": "v9.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -599,7 +599,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v9.16.0",
+            "version": "v9.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -651,12 +651,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "fb63fbb6a2a4b1aaa304d319d3af937fc835715f"
+                "reference": "c1d30f104e663e86bc5b329e3298fe531b6e4222"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/fb63fbb6a2a4b1aaa304d319d3af937fc835715f",
-                "reference": "fb63fbb6a2a4b1aaa304d319d3af937fc835715f",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/c1d30f104e663e86bc5b329e3298fe531b6e4222",
+                "reference": "c1d30f104e663e86bc5b329e3298fe531b6e4222",
                 "shasum": ""
             },
             "require": {
@@ -711,11 +711,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-06-06T14:28:18+00:00"
+            "time": "2022-06-13T18:41:34+00:00"
         },
         {
             "name": "illuminate/macroable",
-            "version": "v9.16.0",
+            "version": "v9.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -761,16 +761,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v9.16.0",
+            "version": "v9.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "f87ac1cc6dd3f9f03c9f7b48c7d94b7a53933a0a"
+                "reference": "6ba42086f450e113d0e8830495ff474bc60bc745"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/f87ac1cc6dd3f9f03c9f7b48c7d94b7a53933a0a",
-                "reference": "f87ac1cc6dd3f9f03c9f7b48c7d94b7a53933a0a",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/6ba42086f450e113d0e8830495ff474bc60bc745",
+                "reference": "6ba42086f450e113d0e8830495ff474bc60bc745",
                 "shasum": ""
             },
             "require": {
@@ -826,7 +826,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-06-02T14:10:45+00:00"
+            "time": "2022-06-07T15:09:32+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
@@ -2064,16 +2064,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v6.1.0",
+            "version": "v6.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "c9646197ef43b0e2ff44af61e7f0571526fd4170"
+                "reference": "6187424023fbffcd757789aeb517c9161b1eabee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/c9646197ef43b0e2ff44af61e7f0571526fd4170",
-                "reference": "c9646197ef43b0e2ff44af61e7f0571526fd4170",
+                "url": "https://api.github.com/repos/symfony/console/zipball/6187424023fbffcd757789aeb517c9161b1eabee",
+                "reference": "6187424023fbffcd757789aeb517c9161b1eabee",
                 "shasum": ""
             },
             "require": {
@@ -2140,7 +2140,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v6.1.0"
+                "source": "https://github.com/symfony/console/tree/v6.1.1"
             },
             "funding": [
                 {
@@ -2156,7 +2156,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-27T06:34:22+00:00"
+            "time": "2022-06-08T14:02:09+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

@@ -9,7 +9,7 @@ require_once './models/Usuario.php';
 require_once 'UsuarioController.php';
 
 
-class EmpleadoController extends Empleado{
+class EmpleadoController extends Empleado implements IApiUsable{
 
   public function CargarUno($request, $handler){
     $params = $request->getParsedBody();

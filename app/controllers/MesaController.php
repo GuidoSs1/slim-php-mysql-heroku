@@ -1,11 +1,12 @@
 <?php
 
-//require_once './interfaces/IApiUsable.php';
+require_once './interfaces/IApiUsable.php';
 require_once './models/Mesa.php';
+require_once './models/Pedido.php';
 
-class MesaController extends Mesa {
+class MesaController extends Mesa implements IApiUsable{
 
-  public function TraerUno($request, $handler){
+  public function TraerUno($request, $handler, $args){
     $params = $request->getParsedBody();
     $id = $params['mesa_id'];
     $Mesa = Mesa::getMesaById($id);
@@ -145,21 +146,21 @@ class MesaController extends Mesa {
           ->withHeader('Content-Type', 'application/json');
     }
 
-    /*public function TraerDemoraPedidoMesa($request, $handler, $args){
+    public function TraerDemoraPedidoMesa($request, $handler, $args){
 
-        $Mesa_code = $args['Mesa_code'];
-        $order_id = $args['order_id'];
-        $delay = Order::getMaxTimeOrderByMesaCode($order_id, $Mesa_code)[0]['time_order'];
+        $mesa_code = $args['mesa_code'];
+        $pedido_id = $args['pedido_id'];
+        $delay = Pedido::getMaxTimePedidoByMesaCode($pedido_id, $mesa_code)[0]['time_pedido'];
         if ($delay == 0){
-            echo '<h2>Mesa Code: '.$Mesa_code.'<br>Waiting Time: '.$delay.' minutes.</h2>
-            <h2>Your order is ready, it will be dispatched shortly. Thanks for choosing us, Bon Appetit</h2><br>';
+            echo '<h2>Mesa Code: '.$mesa_code.'<br>Tiempo de espera: '.$delay.' minutos.</h2>
+            <h2>Tu pedido esta listo, pronto sera entregado.</h2><br>';
         }else{
-            echo '<h2>Mesa Code: '.$Mesa_code.'<br>Order Will be ready in aprox: '.$delay.' minutes.</h2><br>';
+            echo '<h2>Mesa Code: '.$mesa_code.'<br>El pedido va a estar listo en: '.$delay.' minutos.</h2><br>';
         }
-        $payload = json_encode(array("mensaje" => "Waiting Time: ".$delay." minutes"));
+        $payload = json_encode(array("mensaje" => "Tiempo de espera: ".$delay." minutos"));
         $handler->getBody()->write($payload);
         return $handler
           ->withHeader('Content-Type', 'application/json');
-    }*/
+    }
 }
 ?>

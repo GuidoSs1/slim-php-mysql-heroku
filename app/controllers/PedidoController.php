@@ -6,7 +6,7 @@ require_once './models/Mesa.php';
 require_once './models/UploadManager.php';
 require_once './controllers/UsuarioController.php';
 
-class PedidoController extends Pedido{
+class PedidoController extends Pedido implements IApiUsable{
 
   public function TraerUno($request, $handler, $args){
     $id = $args['id'];

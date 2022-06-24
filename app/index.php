@@ -83,7 +83,24 @@ $app->group('/mesas', function (RouteCollectorProxy $group) {
   $group->put('/cerrar', \MesaController::class . ':ModificarUnoAdmin')->add(\MWAccess::class . ':isAdmin');
 });
 
+$app->group('/cliente', function (RouteCollectorProxy $group) {
+  $group->get('/mesa/{mesa_code}/{pedido_id}/', \MesaController::class . ':TraerDemoraPedidoMesa');
+  $group->post('/encuesta', \EncuestaController::class . ':CargarUno');
+});
 
+$app->group('/login', function (RouteCollectorProxy $group) {
+  $group->post('[/]', \LoginController::class . ':verificarUser');
+});
+
+$app->group('/admin', function (RouteCollectorProxy $group) {
+  $group->post('/encuestas', \EncuestaController::class . ':mejoresEncuentas');
+  $group->post('/descargar', \ArchivoController::class . ':DownloadPdf');
+})->add(\MWAccess::class . ':isAdmin');
+
+$app->group('/archivos', function (RouteCollectorProxy $group) {
+  $group->get('/crear', \ArchivoController::class . ':Escribir');
+  $group->get('/leer', \ArchivoController::class . ':Leer');
+})->add(\MWAccess::class . ':isAdmin');
 
 $app->get('[/]', function (Request $request, Response $response) {    
     $response->getBody()->write("Slim Framework 4 PHP");

@@ -51,16 +51,16 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `username`, `password`, `isAdmin`, `user_type`, `estado`, `date_init`, `date_end`) VALUES
-(10, 'Guido', '$2y$10$YC33xVvmADBUIczUmSShY.hkCB7pLh5ksH.COU7loi2Zd4V8h.0cy', 1, 'Admin', 'Active', '2022-06-01 00:32:31', NULL),
-(15, 'User1', '$2y$10$3bG3uAu2AJ7VnMcM08IBcu3kLehg9t6YjWBAQ/j6FeLR7VgMzOWN2', 0, 'Bartender', 'Active', '2022-06-01 01:31:07', NULL),
-(16, 'User2', '$2y$10$yT74CCOm7isBvu19UvpP.uXCyy3rTYqLw5mNH4AYb.uIzozX6hY3.', 0, 'Bartender', 'Active', '2022-06-01 01:31:15', NULL),
-(17, 'User3', '$2y$10$izib3ooG60BV9VhfVWEpnuk67M3EzAz/yboSaGlq4tvFrjIKTFAl2', 0, 'Bartender', 'Active', '2022-06-01 01:31:19', NULL),
-(18, 'User4', '$2y$10$CnSjF.0SF2FHYhxXKzjrsuZbWZzS4CrQ.kin1GhgDpHmiDXv.kZQO', 0, 'Cocinero', 'Active', '2022-06-01 01:31:32', NULL),
-(19, 'User5', '$2y$10$QLr2gkRy4rB6rYkRT/lUye4WUv.iCkSr2Bm4gcDFrYF09R1MclHl.', 0, 'Cocinero', 'Active', '2022-06-01 01:31:41', NULL),
-(20, 'User6', '$2y$10$JxpnNeff2MzRNzrX/LfoRu7U/A8GzU7CEdrF3E8KCFyXHNccnLDo2', 0, 'Cocinero', 'Active', '2022-06-01 01:31:47', NULL),
-(21, 'User7', '$2y$10$/jvBeHcBsJXiVqno25eAx.kePekvRQrqDjTOmY8Yd3w8rw3MCcXsq', 0, 'Mozo', 'Active', '2022-06-01 01:32:01', NULL),
-(22, 'User8', '$2y$10$M9DS08Vxs0MR2OdjL1OIxuYcDCOIOffGzdDk3AHS3cms6tGCGS9eO', 0, 'Mozo', 'Active', '2022-06-01 01:32:05', NULL),
-(30, 'User9', '$2y$10$6CYGTBDQ6a3migWWTYHqtuMWIIF7P4NHfOAddeaPvAliFHQUsWg2a', 0, 'Mozo', 'Active', '2022-06-01 19:36:36', NULL);
+(10, 'Guido', 'guido123', 1, 'Admin', 'Active', '2022-06-01 00:32:31', NULL),
+(15, 'User1', 'user1', 0, 'Bartender', 'Active', '2022-06-01 01:31:07', NULL),
+(16, 'User2', 'user2', 0, 'Bartender', 'Active', '2022-06-01 01:31:15', NULL),
+(17, 'User3', 'user3', 0, 'Bartender', 'Active', '2022-06-01 01:31:19', NULL),
+(18, 'User4', 'user4', 0, 'Cocinero', 'Active', '2022-06-01 01:31:32', NULL),
+(19, 'User5', 'user5', 0, 'Cocinero', 'Active', '2022-06-01 01:31:41', NULL),
+(20, 'User6', 'user6', 0, 'Cocinero', 'Active', '2022-06-01 01:31:47', NULL),
+(21, 'User7', 'user7', 0, 'Mozo', 'Active', '2022-06-01 01:32:01', NULL),
+(22, 'User8', 'user8', 0, 'Mozo', 'Active', '2022-06-01 01:32:05', NULL),
+(30, 'User9', 'user9', 0, 'Mozo', 'Active', '2022-06-01 19:36:36', NULL);
 
 
 DROP TABLE IF EXISTS `producto`;
@@ -83,22 +83,22 @@ CREATE TABLE IF NOT EXISTS `producto` (
 --
 
 INSERT INTO `producto` (`producto_id`, `producto_area`, `producto_pedido_asoc`, `producto_estado`, `producto_desc`, `producto_cost`, `time_init`, `time_finish`, `time_to_finish`) VALUES
-(9, 2, 8, 'Listo', 'encuestaso Al Champignon', 550, '2022-06-01 02:50:33', '2022-06-01 03:20:33', 30),
-(10, 3, 8, 'Listo', 'Gaseosa Linea Pepsi 2lt.', 300, '2022-06-01 02:51:24', '2022-06-01 02:56:24', 35),
-(11, 3, 8, 'Listo', 'Gaseosa Linea Pepsi 2lt.', 300, '2022-06-01 03:05:14', '2022-06-01 03:10:14', 5),
-(12, 3, 8, 'Listo', 'Gaseosa Linea Pepsi 2lt.', 300, '2022-06-01 03:05:51', '2022-06-01 03:10:51', 5),
-(13, 2, 8, 'Listo', 'Hamburguesa con Bacon', 550, '2022-06-01 03:06:59', '2022-06-01 03:26:59', 20),
-(14, 2, 8, 'Listo', 'Hamburguesa con Cheddar y Guarnicion', 550, '2022-06-01 03:09:14', '2022-06-01 03:27:14', 18),
-(15, 2, 8, 'Listo', 'Ensalada Waldorf', 550, '2022-06-01 03:10:27', '2022-06-01 03:17:27', 7),
-(16, 2, 9, 'Listo', 'Ensalada Waldorf', 350, '2022-06-01 11:54:41', '2022-06-01 12:01:41', 7),
-(17, 2, 9, 'Listo', 'Ensalada Rusa', 250, '2022-06-01 11:55:24', '2022-06-01 12:03:24', 8),
-(18, 2, 10, 'Listo', 'encuestaso al Champignon', 450, '2022-06-02 00:16:04', '2022-06-02 00:36:04', 0),
-(19, 2, 10, 'Listo', 'encuestaso al Verdeo', 400, '2022-06-02 00:16:29', '2022-06-02 00:38:29', 0),
-(20, 3, 10, 'Listo', 'Cerveza Stella Artois 1lt.', 300, '2022-06-02 00:17:06', '2022-06-02 00:22:06', 0),
-(21, 3, 11, 'Listo', 'Cerveza Stella Artois 1lt.', 300, '2022-06-02 20:01:14', '2022-06-02 20:06:14', 0),
-(22, 3, 11, 'Listo', 'Cerveza Rabieta Irish Ale 750ml.', 300, '2022-06-02 20:01:46', '2022-06-02 20:08:46', 0),
-(23, 2, 11, 'Listo', 'Papas bravas', 450, '2022-06-02 20:02:07', '2022-06-02 20:27:07', 0),
-(24, 2, 11, 'Listo', 'Papas con Cheddar & Bacon', 500, '2022-06-02 20:02:29', '2022-06-02 20:32:29', 0);
+(9, 2, 8, 'Listo Para Servir', 'encuestaso Al Champignon', 550, '2022-06-01 02:50:33', '2022-06-01 03:20:33', 30),
+(10, 3, 8, 'Listo Para Servir', 'Gaseosa Linea Pepsi 2lt.', 300, '2022-06-01 02:51:24', '2022-06-01 02:56:24', 35),
+(11, 3, 8, 'Listo Para Servir', 'Gaseosa Linea Pepsi 2lt.', 300, '2022-06-01 03:05:14', '2022-06-01 03:10:14', 5),
+(12, 3, 8, 'Listo Para Servir', 'Gaseosa Linea Pepsi 2lt.', 300, '2022-06-01 03:05:51', '2022-06-01 03:10:51', 5),
+(13, 2, 8, 'Listo Para Servir', 'Hamburguesa con Bacon', 550, '2022-06-01 03:06:59', '2022-06-01 03:26:59', 20),
+(14, 2, 8, 'Listo Para Servir', 'Hamburguesa con Cheddar y Guarnicion', 550, '2022-06-01 03:09:14', '2022-06-01 03:27:14', 18),
+(15, 2, 8, 'Listo Para Servir', 'Ensalada Waldorf', 550, '2022-06-01 03:10:27', '2022-06-01 03:17:27', 7),
+(16, 2, 9, 'Listo Para Servir', 'Ensalada Waldorf', 350, '2022-06-01 11:54:41', '2022-06-01 12:01:41', 7),
+(17, 2, 9, 'Listo Para Servir', 'Ensalada Rusa', 250, '2022-06-01 11:55:24', '2022-06-01 12:03:24', 8),
+(18, 2, 10, 'Listo Para Servir', 'encuestaso al Champignon', 450, '2022-06-02 00:16:04', '2022-06-02 00:36:04', 0),
+(19, 2, 10, 'Listo Para Servir', 'encuestaso al Verdeo', 400, '2022-06-02 00:16:29', '2022-06-02 00:38:29', 0),
+(20, 3, 10, 'Listo Para Servir', 'Cerveza Stella Artois 1lt.', 300, '2022-06-02 00:17:06', '2022-06-02 00:22:06', 0),
+(21, 3, 11, 'Listo Para Servir', 'Cerveza Stella Artois 1lt.', 300, '2022-06-02 20:01:14', '2022-06-02 20:06:14', 0),
+(22, 3, 11, 'Listo Para Servir', 'Cerveza Rabieta Irish Ale 750ml.', 300, '2022-06-02 20:01:46', '2022-06-02 20:08:46', 0),
+(23, 2, 11, 'Listo Para Servir', 'Papas bravas', 450, '2022-06-02 20:02:07', '2022-06-02 20:27:07', 0),
+(24, 2, 11, 'Listo Para Servir', 'Papas con Cheddar & Bacon', 500, '2022-06-02 20:02:29', '2022-06-02 20:32:29', 0);
 
 --
 -- Estructura de tabla para la tabla `area`
@@ -142,15 +142,15 @@ CREATE TABLE IF NOT EXISTS `mesas` (
 --
 
 INSERT INTO `mesas` (`id`, `mesa_code`, `id_empleado`, `estado`) VALUES
-(2, 'ME002', 20, 'Cliente Esperando Pedido'),
-(3, 'ME003', 12, 'Cliente Pagando'),
-(4, 'ME004', 20, 'Cerrada'),
-(5, 'ME005', NULL, 'Cerrada'),
-(6, 'ME006', NULL, 'Cerrada'),
-(8, 'ME008', NULL, 'Cerrada'),
-(9, 'ME009', NULL, 'Cerrada'),
-(10, 'ME010', NULL, 'Cerrada'),
-(11, 'ME011', NULL, 'Cerrada');
+(2, 'M02', 20, 'Cliente Esperando Pedido'),
+(3, 'M03', 12, 'Cliente Pagando'),
+(4, 'M04', 20, 'Cerrada'),
+(5, 'M05', NULL, 'Cerrada'),
+(6, 'M06', NULL, 'Cerrada'),
+(8, 'M08', NULL, 'Cerrada'),
+(9, 'M09', NULL, 'Cerrada'),
+(10, 'M10', NULL, 'Cerrada'),
+(11, 'M11', NULL, 'Cerrada');
 
 -- --------------------------------------------------------
 
@@ -175,11 +175,11 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
 --
 
 INSERT INTO `pedidos` (`id`, `id_mesa`, `estado_pedido`, `nombre_cliente`, `img_pedido`, `cost_pedido`) VALUES
-(8, 2, 'En Preparacion', 'Fulano_01', './OrderImages/8.png', 3100),
-(9, 3, 'En Preparacion', 'Fulano_02', './OrderImages/9.png', 600),
-(10, 3, 'Listo', 'Fulano_03', './OrderImages/10.png', 1150),
-(11, 3, 'Listo', 'Fulano_04', './OrderImages/11.png', 1550),
-(12, 2, 'Pendiente', 'Fulano_05', './OrderImages/Order_12.png', 0);
+(8, 2, 'En Preparacion', 'Fulano_01', './PedidoImages/8.png', 3100),
+(9, 3, 'En Preparacion', 'Fulano_02', './PedidoImages/9.png', 600),
+(10, 3, 'Listo Para Servir', 'Fulano_03', './PedidoImages/10.png', 1150),
+(11, 3, 'Listo Para Servir', 'Fulano_04', './PedidoImages/11.png', 1550),
+(12, 2, 'Pendiente', 'Fulano_05', './PedidoImages/Pedido_12.png', 0);
 
 
 
@@ -232,12 +232,47 @@ CREATE TABLE IF NOT EXISTS `encuestas` (
 --
 
 INSERT INTO `encuestas` (`id`, `pedido_id`, `mesa_punt`, `resto_punt`, `mozo_punt`, `cocinero_punt`, `promedio_punt`, `comentario`) VALUES
-(1, 10, 8, 8, 10, 9, 8.75, 'La mesa parecia la de pepe argento, pero muy rico todo'),
-(2, 11, 7, 8, 8, 4, 6.75, 'Perder mi perro fue muy duro pero no tanto como la milanesa de aca'),
-(3, 9, 7, 8, 8, 10, 8.25, 'Tardo un poquito pero la comida de 10!');
+(1, 10, 9, 9, 9, 9, 9, 'Muy rico todo'),
+(2, 11, 8, 8, 8, 8, 8, 'Muy bueno'),
+(3, 9, 7, 7, 7, 8, 7, 'Tardo un poco, pero muy rica la comida');
 
 
 -- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `historial_empleados`;
+CREATE TABLE IF NOT EXISTS `historial_empleados` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `username` varchar(40) COLLATE utf8_spanish2_ci NOT NULL,
+  `date_login` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_login_user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `historial_empleados`
+--
+
+INSERT INTO `historial_empleados` (`id`, `user_id`, `username`, `date_login`) VALUES
+(119, 10, 'Guido', '2021-06-24 00:54:03'),
+(120, 10, 'Guido', '2022-06-24 00:58:51'),
+(121, 10, 'Guido', '2022-06-24 01:00:10'),
+(122, 10, 'Guido', '2022-06-24 01:11:00'),
+(123, 10, 'Guido', '2022-06-24 01:16:53'),
+(124, 10, 'Guido', '2022-06-24 01:18:08'),
+(125, 10, 'Guido', '2022-06-24 01:49:22'),
+(126, 15, 'User1', '2022-06-24 02:25:33'),
+(127, 15, 'User1', '2022-06-24 02:26:44'),
+(128, 16, 'User2', '2022-06-24 03:12:04'),
+(129, 17, 'User3', '2022-06-24 03:12:33'),
+(130, 18, 'User4', '2022-06-24 03:12:56'),
+(131, 16, 'User2', '2022-06-24 03:13:16'),
+(132, 18, 'User4', '2022-06-24 03:13:35'),
+(133, 16, 'User2', '2022-06-24 03:13:49'),
+(134, 19, 'User5', '2022-06-24 03:14:07'),
+(135, 19, 'User5', '2022-06-24 19:33:22');
+
+
 
 
 --
@@ -259,6 +294,9 @@ COMMIT;
 
 ALTER TABLE `encuestas`
   ADD CONSTRAINT `fo_encuestas_pedido` FOREIGN KEY (`pedido_id`) REFERENCES `pedidos` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+ALTER TABLE `historial_empleados`
+  ADD CONSTRAINT `FK_login_user` FOREIGN KEY (`user_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 --
 --
 
