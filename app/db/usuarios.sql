@@ -175,11 +175,8 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
 --
 
 INSERT INTO `pedidos` (`id`, `id_mesa`, `estado_pedido`, `nombre_cliente`, `img_pedido`, `cost_pedido`) VALUES
-(8, 2, 'En Preparacion', 'Fulano_01', './PedidoImages/8.png', 3100),
-(9, 3, 'En Preparacion', 'Fulano_02', './PedidoImages/9.png', 600),
-(10, 3, 'Listo Para Servir', 'Fulano_03', './PedidoImages/10.png', 1150),
-(11, 3, 'Listo Para Servir', 'Fulano_04', './PedidoImages/11.png', 1550),
-(12, 2, 'Pendiente', 'Fulano_05', './PedidoImages/Pedido_12.png', 0);
+(11, 3, 'Listo Para Servir', 'Albina', './PedidoImages/Pedido_17.png', 1550),
+(12, 2, 'Pendiente', 'Albina', './PedidoImages/Pedido_18.png', 0);
 
 
 
