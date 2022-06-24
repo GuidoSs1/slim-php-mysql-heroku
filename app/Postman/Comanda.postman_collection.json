@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "1d4775b7-274c-43a2-a327-820eee9b513f",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20134040"
+	},
+	"item": [
+		{
+			"name": "localhost:666/usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:666/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:666/usuarios/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Juan",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "$2y$10$3bG3uAu2AJ7VnMcM08IBcu3kLehg9t6YjWBAQ/j6FeLR7VgMzOWN2",
+							"type": "text"
+						},
+						{
+							"key": "isAdmin",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "user_type",
+							"value": "Mozo",
+							"type": "text"
+						},
+						{
+							"key": "estado",
+							"value": "Active",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:666/usuarios/",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:666/usuarios?nombre=Guido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:666/usuarios?nombre=Guido",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Guido"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:666/empleados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:666/empleados",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:666/empleados",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Juan",
+							"type": "text"
+						},
+						{
+							"key": "area",
+							"value": "Cocinero",
+							"type": "text"
+						},
+						{
+							"key": "usuario",
+							"value": "Juan",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:666/empleados",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:666/empleados/?19=",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "19",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:666/empleados/?19=",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"empleados",
+						""
+					],
+					"query": [
+						{
+							"key": "19",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:666/productos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "area",
+							"value": "Cocina",
+							"type": "text"
+						},
+						{
+							"key": "pedido_asoc",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "desc",
+							"value": "Mila de Pollo",
+							"type": "text"
+						},
+						{
+							"key": "costo",
+							"value": "320",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:666/productos",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:666/pedidos/?id=8",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:666/pedidos/?id=8",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"pedidos",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:666/pedidos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:666/pedidos",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"pedidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:666/pedidos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "mesa_id",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "estado",
+							"value": "En preparacion",
+							"type": "text"
+						},
+						{
+							"key": "cliente",
+							"value": "Albina",
+							"type": "text"
+						},
+						{
+							"key": "costo",
+							"value": "300",
+							"type": "text"
+						},
+						{
+							"key": "pedido_pic",
+							"type": "file",
+							"src": "/C:/Users/guido/Pictures/m23bwh4n0x151.png",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:666/pedidos",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"pedidos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:666/mesas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:666/mesas",
+					"host": [
+						"localhost"
+					],
+					"port": "666",
+					"path": [
+						"mesas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
