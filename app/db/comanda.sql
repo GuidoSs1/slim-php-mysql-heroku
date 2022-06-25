@@ -99,7 +99,36 @@ CREATE TABLE `encuestas` (
 
 LOCK TABLES `encuestas` WRITE;
 /*!40000 ALTER TABLE `encuestas` DISABLE KEYS */;
+INSERT INTO `encuestas` VALUES (1,17,9,9,9,9,9,'Muy rico todo y buena atencion');
 /*!40000 ALTER TABLE `encuestas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `historial_empleados`
+--
+
+DROP TABLE IF EXISTS `historial_empleados`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `historial_empleados` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `username` varchar(40) COLLATE utf8_spanish2_ci NOT NULL,
+  `date_login` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_login_user` (`user_id`),
+  CONSTRAINT `FK_login_user` FOREIGN KEY (`user_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `historial_empleados`
+--
+
+LOCK TABLES `historial_empleados` WRITE;
+/*!40000 ALTER TABLE `historial_empleados` DISABLE KEYS */;
+INSERT INTO `historial_empleados` VALUES (119,10,'Guido','2021-06-24 00:54:03'),(120,10,'Guido','2022-06-24 00:58:51'),(121,10,'Guido','2022-06-24 01:00:10'),(122,10,'Guido','2022-06-24 01:11:00'),(123,10,'Guido','2022-06-24 01:16:53'),(124,10,'Guido','2022-06-24 01:18:08'),(125,10,'Guido','2022-06-24 01:49:22'),(126,15,'User1','2022-06-24 02:25:33'),(127,15,'User1','2022-06-24 02:26:44'),(128,16,'User2','2022-06-24 03:12:04'),(129,17,'User3','2022-06-24 03:12:33'),(130,18,'User4','2022-06-24 03:12:56'),(131,16,'User2','2022-06-24 03:13:16'),(132,18,'User4','2022-06-24 03:13:35'),(133,16,'User2','2022-06-24 03:13:49'),(134,19,'User5','2022-06-24 03:14:07'),(135,19,'User5','2022-06-24 19:33:22');
+/*!40000 ALTER TABLE `historial_empleados` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -234,4 +263,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-25 11:41:43
+-- Dump completed on 2022-06-25 12:01:43
